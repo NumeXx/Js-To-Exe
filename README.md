@@ -1,9 +1,6 @@
 # Js-To-Exe
 Simple Tools to Convert JS-TO-EXE (Coded in Python 3.x)
 
-<h2> Download Exe </h2>
-Download Here : https://github.com/NumeXx/Js-To-Exe/blob/main/js-to-exe.exe
-
 # DONATION
 <pre>
 <span class="pl-k">&gt;</spam><a href="https://www.paypal.com/paypalme/NumeXGans" rel="nofollow"><code> Paypal</code></a>
