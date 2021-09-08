@@ -1,31 +1,54 @@
-# Coded By NumeX
-# JS-TO-EXE
+from genericpath import isfile
+import os
+import sys
+import wget
+import pathlib
+import time
 
-# Import Modulee
-import os, time
+def logo():
+    print("""
+[ ! ] Node JS To Exe
+[ ! ] Tools By NumeX
+[ ! ] Coded in Python3
+    \n""")
 
-# Lte's Goooo
-print('#---------------------------------------#')
-print('[/] JS-TO-EXE By NumeX')
-print('[/] Github : https://github.com/NumeXx')
-print('#---------------------------------------#\n')
-print('[1] Install Package')
-print('[2] Convert JS-TO-EXE')
-pilih = input('\n[?] Select Your Choice : ')
-if pilih == '1':
-    os.system("npm install -g pkg")
-    print('Success Install Package..')
-    input('Enter any key for continue...')
-    os.system('cls || clear')
-    os.system('python js-to-exe.py')
-elif pilih == '2':
-    fl = input("[/] Enter your file name (EX - test.js) : ")
-    print('Converting...')
-    time.sleep(1)
-    os.system(f'pkg {fl}')
-    os.system('cls || clear')
-    print("Success Converting...")
-    input('Enter any key for close...')
-else:
-    print("Error Keyword...")
-exit()
+def convert(file):
+    pathnode = "C:/Program Files/nodejs/node.exe"
+    if (os.path.isfile(pathnode)):
+        print("[!] Installing Module...")
+        time.sleep(1)
+        os.system("cls || clear")
+        os.system("npm i pkg -g")
+        time.sleep(1)
+        os.system("cls || clear")
+        print("[!] Convert To Exe....")
+        os.system(f"pkg {file}")
+        time.sleep(1)
+        os.system("cls || clear")
+        logo()
+        sys.exit("Closeee")
+    
+    else:
+        print("[!] Please Install NodeJs. Downloading... [!]")
+        time.sleep(1)
+        down = wget.download("https://nodejs.org/dist/v14.17.6/node-v14.17.6-x64.msi")
+        print(down)
+        os.system("cls || clear")
+        os.system("node-v14.17.6-x64.msi")
+        time.sleep(1)
+        os.system("cls || clear")
+        os.system("npm i pkg -g")
+        time.sleep(1)
+        os.system("cls || clear")
+        print("[!] Convert To Exe....")
+        os.system(f"pkg {file}")
+        time.sleep(1)
+        os.system("cls || clear")
+        logo()
+        sys.exit("Closeee")
+
+
+if __name__ == "__main__":
+    logo()
+    files = input("Enter Script Name [EX - text.js] : ")
+    convert(files)
